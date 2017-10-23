@@ -139,7 +139,6 @@ function moveDodgerLeft() {
      if (left > 0) {
        window.requestAnimationFrame(moveDodgerLeft)
      }
-     window.requestAnimationFrame(moveDodgerLeft)
 }
 
 function moveDodgerRight() {
@@ -149,7 +148,6 @@ function moveDodgerRight() {
      if (left < 360) {
        window.requestAnimationFrame(moveDodgerRight)
      }
-     window.requestAnimationFrame(moveDodgerRight)
 }
 
 /**
