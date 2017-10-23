@@ -53,13 +53,13 @@ function createRock(x) {
    * it to GAME and move it downwards.
    */
    GAME.appendChild(rock)
-   moveRock(rock)
+   moveRock()
   /**
    * This function moves the rock. (2 pixels at a time
    * seems like a good pace.)
    */
   function moveRock() {
-    while (checkCollision(rock) && top > 0) {
+    while (!checkCollision(rock)) {
       top += 2
       window.requestAnimationFrame(moveRock)
     }
