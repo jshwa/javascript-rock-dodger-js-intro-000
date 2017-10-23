@@ -69,7 +69,7 @@ function createRock(x) {
     }
 
     if (top === 400) {
-      ROCKS.delete(rock)
+    
     }
 
     /**
