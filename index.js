@@ -59,7 +59,7 @@ function createRock(x) {
    * seems like a good pace.)
    */
   function moveRock() {
-    while (checkCollision(rock)) {
+    while (!checkCollision(rock)) {
       top += 2
       window.requestAnimationFrame(moveRock)
     }
