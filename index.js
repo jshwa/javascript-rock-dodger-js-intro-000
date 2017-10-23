@@ -33,9 +33,6 @@ function createRock(x) {
    * it to GAME and move it downwards.
    */
    GAME.appendChild(rock)
-   rock.style.top = `${top+2}px`
-   rock.style.top = `${top+2}px`
-   rock.style.top = `${top+2}px`
   /**
    * This function moves the rock. (2 pixels at a time
    * seems like a good pace.)
@@ -44,7 +41,7 @@ function createRock(x) {
     do {
       rock.style.top = `${top+2}px`
       window.requestAnimationFrame(moveRock)
-    } while (!checkCollision(rock) || top < 400)
+    } while (top < 400)
 
     /**
      * If a rock collides with the DODGER,
