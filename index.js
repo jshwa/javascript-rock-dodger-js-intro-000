@@ -105,7 +105,7 @@ function createRock(x) {
  */
 function endGame() {
   gameInterval = null
-  ROCKS = []
+  ROCKS.length = 0
   document.removeEventListener('keydown')
   alert('YOU LOSE!')
 }
