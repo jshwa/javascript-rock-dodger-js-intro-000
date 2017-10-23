@@ -58,18 +58,10 @@ function createRock(x) {
    * seems like a good pace.)
    */
   function moveRock() {
-    while (top < 400) {
+    do {
       rock.style.top = `${top+2}px`
       window.requestAnimationFrame(moveRock)
-    }
-
-    if (checkCollision(rock)) {
-      endGame()
-    }
-
-    if (top === 400) {
-
-    }
+    } while (checkCollision(rock) || top < 400)
 
     /**
      * If a rock collides with the DODGER,
