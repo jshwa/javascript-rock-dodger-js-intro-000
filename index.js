@@ -23,7 +23,7 @@ function checkCollision(rock) {
   // rocks are 20px high
   // DODGER is 20px high
   // GAME_HEIGHT - 20 - 20 = 360px;
-  if (top <= 360) {
+  if (top < 360) {
     const dodgerLeftEdge = positionToInteger(DODGER.style.left)
     const dodgerRightEdge = dodgerLeftEdge + 40;
     const rockLeftEdge = positionToInteger(rock.style.left)
@@ -31,17 +31,7 @@ function checkCollision(rock) {
 
     if ((rockLeftEdge < dodgerLeftEdge && rockRightEdge > dodgerLeftEdge) ||
     (rockLeftEdge > dodgerLeftEdge && rockLeftEdge < dodgerRightEdge) ||
-    (rockLeftEdge < dodgerRightEdge && rockRightEdge > dodgerRightEdge)
-      /**
-               * Think about it -- what's happening here?
-               * There's been a collision if one of three things is true:
-               * 1. The rock's left edge is < the DODGER's left edge,
-               *    and the rock's right edge is > the DODGER's left edge;
-               * 2. The rock's left edge is > the DODGER's left edge,
-               *    and the rock's right edge is < the DODGER's right edge;
-               * 3. The rock's left edge is < the DODGER's right edge,
-               *    and the rock's right edge is > the DODGER's right edge
-               */) {
+    (rockLeftEdge < dodgerRightEdge && rockRightEdge > dodgerRightEdge)) {
       return true
     }
   }
