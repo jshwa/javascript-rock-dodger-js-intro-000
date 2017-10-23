@@ -112,6 +112,7 @@ function moveDodger(e) {
    window.addEventListener('keydown', function(e) {
      if (e.which === LEFT_ARROW) {
        moveDodgerLeft()
+       e.preventDefault()
      } else if (e.which === RIGHT_ARROW) {
        moveDodgerRight()
      }
@@ -122,7 +123,6 @@ function moveDodgerLeft() {
     var left = positionToInteger(DODGER.style.left)
      if (left > 0) {
        DODGER.style.left = `${left - 4}px`
-       e.preventDefault()
      }
 }
 
