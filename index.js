@@ -52,7 +52,7 @@ function createRock(x) {
    * Now that we have a rock, we'll need to append
    * it to GAME and move it downwards.
    */
-   $('rock').appendto('#game')
+  
 
   /**
    * This function moves the rock. (2 pixels at a time
@@ -94,8 +94,7 @@ function createRock(x) {
   // when there's a collision
   ROCKS.push(rock)
 
-  // Finally, return the rock element you've created
-  return rock
+  // Finally, return the rock element you've created return rock
 }
 
 /**
@@ -122,16 +121,16 @@ function moveDodger(e) {
 }
 
 function moveDodgerLeft() {
-    var left = positionToInteger(dodger.style.left)
+    var left = positionToInteger(DODGER.style.left)
      if (left > 0) {
-       dodger.style.left = `${left - 4}px`
+       DODGER.style.left = `${left - 4}px`
      }
 }
 
 function moveDodgerRight() {
-     var left = positionToInteger(dodger.style.left)
+     var left = positionToInteger(DODGER.style.left)
      if (left < 360) {
-       dodger.style.left = `${left + 4}px`
+       DODGER.style.left = `${left + 4}px`
      }
 }
 
