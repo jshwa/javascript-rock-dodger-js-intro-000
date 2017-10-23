@@ -69,7 +69,7 @@ function createRock(x) {
     }
 
     if (top === 400) {
-    
+
     }
 
     /**
@@ -106,7 +106,7 @@ function createRock(x) {
 function endGame() {
   gameInterval = null
   ROCKS.length = 0
-  document.removeEventListener('keydown')
+  document.removeEventListener('keydown', function(e))
   alert('YOU LOSE!')
 }
 
