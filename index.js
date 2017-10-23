@@ -59,13 +59,12 @@ function createRock(x) {
    */
   function moveRock() {
     while (top < 400) {
-      top += 2
-      rock.style.top = `${top}px`
+      rock.style.top = `${top+2}px`
       window.requestAnimationFrame(moveRock)
     }
 
     if (checkCollision(rock)) {
-      
+      endGame()
     }
 
     if (top === 400) {
