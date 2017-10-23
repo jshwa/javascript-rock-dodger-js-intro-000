@@ -65,7 +65,7 @@ function createRock(x) {
     }
 
     if (checkCollision(rock)) {
-      endGame()
+      
     }
 
     if (top === 400) {
