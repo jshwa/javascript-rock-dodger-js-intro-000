@@ -60,7 +60,7 @@ function createRock(x) {
    */
  }
   function moveRock() {
-    while (!checkCollision(rock) && top > 0) {
+    while (checkCollision(rock) && top > 0) {
       top += 2
       window.requestAnimationFrame(moveRock)
     }
