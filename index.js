@@ -44,7 +44,7 @@ function createRock(x) {
   rock.style.left = `${x}px`
 
   // Hmmm, why would we have used `var` here?
-  var top = 50
+  var top = 0
 
   rock.style.top = `${top}px`
 
@@ -60,6 +60,7 @@ function createRock(x) {
   function moveRock() {
     while (top < 400) {
       top += 2
+      rock.style.top = `${top}px`
       window.requestAnimationFrame(moveRock)
     }
 
