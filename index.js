@@ -16,7 +16,28 @@ var gameInterval = null
  * Be aware of what's above this line,
  * but all of your work should happen below.
  */
-//checkCollision here
+function checkCollision(rock) {
+   const top = positionToInteger(rock.style.top)
+
+   // rocks are 20px high
+   // DODGER is 20px high
+   // GAME_HEIGHT - 20 - 20 = 360px;
+   if (top > 360) {
+     const dodgerLeftEdge = positionToInteger(DODGER.style.left)
+     const dodgerRightEdge = dodgerLeftEdge + 40;
+     const rockLeftEdge = positionToInteger(rock.style.left)
+     const rockRightEdge = rockLeftEdge + 20;
+
+     if ((rockLeftEdge < dodgerLeftEdge && rockRightEdge > dodgerLeftEdge) ||
+     (rockLeftEdge > dodgerLeftEdge && rockLeftEdge < dodgerRightEdge) ||
+     (rockLeftEdge < dodgerRightEdge && rockRightEdge > dodgerRightEdge)) {
+       return true
+     } else {
+       return false
+     }
+   }
+   return false
+ }
 
 function createRock(x) {
   const rock = document.createElement('div')
@@ -40,7 +61,7 @@ function createRock(x) {
   function moveRock() {
       rock.style.top = `${top+=2}px`
 
-      if (top < 400) {
+      if (top < 400 && checkCollision(rock)) {
       window.requestAnimationFrame(moveRock)
     }
 
