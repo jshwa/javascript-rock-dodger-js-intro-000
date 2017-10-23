@@ -58,7 +58,6 @@ function createRock(x) {
    * This function moves the rock. (2 pixels at a time
    * seems like a good pace.)
    */
- }
   function moveRock() {
     while (checkCollision(rock) && top > 0) {
       top += 2
@@ -87,7 +86,7 @@ function createRock(x) {
      * But if the rock *has* reached the bottom of the GAME,
      * we should remove the rock from the DOM
      */
-
+   }
   window.requestAnimationFrame(moveRock)
   // We should kick of the animation of the rock around here
 
