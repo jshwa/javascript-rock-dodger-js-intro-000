@@ -31,12 +31,12 @@ function checkCollision(rock) {
      if ((rockLeftEdge < dodgerLeftEdge && rockRightEdge > dodgerLeftEdge) ||
      (rockLeftEdge > dodgerLeftEdge && rockLeftEdge < dodgerRightEdge) ||
      (rockLeftEdge < dodgerRightEdge && rockRightEdge > dodgerRightEdge)) {
-       return true
-     } else {
        return false
+     } else {
+       return true
      }
    }
-   return false
+   return true
  }
 
 function createRock(x) {
@@ -61,7 +61,7 @@ function createRock(x) {
   function moveRock() {
       rock.style.top = `${top+=2}px`
 
-      if (top < 400 && !checkCollision(rock)) {
+      if (top < 400 && checkCollision(rock)) {
       window.requestAnimationFrame(moveRock)
     }
 
@@ -115,7 +115,6 @@ function moveDodger(e) {
      } else if (e.which === RIGHT_ARROW) {
        moveDodgerRight()
      }
-     e.preventDefault()
    })
 }
 
