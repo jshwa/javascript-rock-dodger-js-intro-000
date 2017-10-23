@@ -61,7 +61,7 @@ function createRock(x) {
     do {
       rock.style.top = `${top+2}px`
       window.requestAnimationFrame(moveRock)
-    } while (checkCollision(rock) || top < 400)
+    } while (!checkCollision(rock) || top < 400)
 
     /**
      * If a rock collides with the DODGER,
